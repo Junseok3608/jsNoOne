@@ -6,3 +6,7 @@ function toggling() {
 }
 
 navbarToggle.addEventListener("click", toggling);
+
+$(".text-btn").on("click", function () {
+  $(".toggletab").toggle("list-group-hidden");
+});
