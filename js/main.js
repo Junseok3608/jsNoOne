@@ -1,7 +1,8 @@
-const alertBox = document.querySelector(".alert-box");
-const alertBoxP = document.querySelector(".alert-box p");
+const navbarList = document.querySelector(".list-group");
+const navbarToggle = document.querySelector(".navbar-toggler");
 
-function alertControl(event, event2) {
-  alertBoxP.innerHTML = event;
-  alertBox.style.display = event2;
+function toggling() {
+  navbarList.classList.toggle("list-group-hidden");
 }
+
+navbarToggle.addEventListener("click", toggling);

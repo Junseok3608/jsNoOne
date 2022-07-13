@@ -4,4 +4,8 @@
   color: white;
   border-radius: 5px;
   display: none;
+}
+
+.list-group-hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
