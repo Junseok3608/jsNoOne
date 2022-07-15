@@ -6,6 +6,7 @@ const loginModal = document.querySelector(".login-modal");
 const formId = document.querySelector("#id-input input");
 const formPw = document.querySelector("#pw-input input");
 const loginSubmit = document.querySelector("#login-submit");
+const darkModeBtn = document.querySelector(".darkmode-btn");
 
 function toggling() {
   navbarList.classList.toggle("list-group-hidden");
@@ -32,40 +33,19 @@ loginSubmit.addEventListener("click", function (e) {
   }
 });
 
-function game369(e) {
-  if (e % 9 == 0) {
-    console.log("clap clap");
-  } else if (e % 3 == 0) {
-    console.log("clap");
+let darkClicks = 0;
+darkModeBtn.addEventListener("click", function () {
+  darkClicks += 1;
+  if (darkClicks % 2 == 0) {
+    darkModeBtn.innerHTML = "dark 🌑";
   } else {
-    console.log("PPPPAAAASSSS");
+    darkModeBtn.innerHTML = "light 🌕";
   }
-}
+});
 
-function gamereal369(e) {
-  if (e % 10 == 3) {
-    console.log("clap");
-  } else if (e % 10 == 6) {
-    console.log("clap");
-  } else if (e % 10 == 9) {
-    console.log("clap");
-  } else {
-    console.log("pass");
-  }
-}
-
-function examresult(a, b) {
-  if (0 > a || 100 < a || 0 > b || 100 < b) {
-    console.log("Are you kidding?");
-  } else if (parseInt(a) == NaN || parseInt(b) == Nan) {
-    console.log("Are you kidding?");
-  } else {
-    if (a < 41 || b < 41) {
-      console.log("You failed");
-    } else if (a + b < 120) {
-      console.log("You failed");
-    } else {
-      console.log("You Pass!!");
-    }
-  }
+let first;
+function refillCoffee(first) {
+  let second = (first / 3) * 2;
+  let last = (second / 3) * 2;
+  return first + second + last;
 }
