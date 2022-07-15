@@ -23,20 +23,36 @@
         </button>
       </div>
     </nav>
-    <ul class="list-group">
+    <ul class="list-group list-group-hidden">
       <li class="list-group-item">An item</li>
       <li class="list-group-item">A second item</li>
       <li class="list-group-item">A third item</li>
       <li class="list-group-item">A fourth item</li>
       <li class="list-group-item">And a fifth one</li>
     </ul>
-    <button class="text-btn">btn</button>
-    <div class="black-bg toggletab list-group-hidden">
+
+    <div class="black-bg login-modal">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+
+        <form action="success.html">
+          <div id="id-input" class="my-3">
+            <input type="text" class="form-control" />
+          </div>
+          <div id="pw-input" class="my-3">
+            <input type="password" class="form-control" />
+          </div>
+          <button id="login-submit" type="submit" class="btn btn-primary">전송</button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
       </div>
     </div>
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- script -->
