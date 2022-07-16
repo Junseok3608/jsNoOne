@@ -45,4 +45,31 @@
 .dark-mode {
   background-color: blak;
   color: white;
+}
+
+.slide-section {
+  overflow: hidden;
+}
+.slide-section .slide-container {
+  width: 300vw;
+  display: flex;
+  transition: all 1s ease-in-out;
+}
+.slide-section .slide-container .slide-box {
+  width: 100vw;
+}
+.slide-section .slide-container .slide-box img {
+  width: 100%;
+}
+
+.slide-transform1 {
+  transform: translateX(none);
+}
+
+.slide-transform2 {
+  transform: translateX(-100vw);
+}
+
+.slide-transform3 {
+  transform: translateX(-200vw);
 }/*# sourceMappingURL=style.css.map */

@@ -43,3 +43,27 @@
   background-color: blak;
   color: white;
 }
+.slide-section {
+  overflow: hidden;
+  .slide-container {
+    width: 300vw;
+    display: flex;
+    transition: all 1s ease-in-out;
+    .slide-box {
+      width: 100vw;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.slide-transform1 {
+  transform: translateX(none);
+}
+.slide-transform2 {
+  transform: translateX(-100vw);
+}
+.slide-transform3 {
+  transform: translateX(-200vw);
+}

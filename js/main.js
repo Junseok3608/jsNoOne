@@ -7,6 +7,12 @@ const formId = document.querySelector("#id-input input");
 const formPw = document.querySelector("#pw-input input");
 const loginSubmit = document.querySelector("#login-submit");
 const darkModeBtn = document.querySelector(".darkmode-btn");
+const slideContainer = document.querySelector(".slide-container");
+const slideBtn1 = document.querySelector(".slide-1");
+const slideBtn2 = document.querySelector(".slide-2");
+const slideBtn3 = document.querySelector(".slide-3");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
 
 function toggling() {
   navbarList.classList.toggle("list-group-hidden");
@@ -25,11 +31,15 @@ loginSubmit.addEventListener("click", function (e) {
   e.preventDefault();
   if (formId.value == "") {
     alert("No ID!");
+  } else if (!/\S+@\S+\.\S+/.test(formId.value)) {
+    alert("Not Email form");
   }
   if (formPw.value == "") {
     alert("No PW!");
   } else if (formPw.value.length < 7) {
     alert("PW is too short!");
+  } else if (!/A-Z/.test(formPw.value)) {
+    alert("You have to use uppercase");
   }
 });
 
@@ -53,5 +63,42 @@ function alertTimeOut() {
     document.querySelector(".alert-danger").style.display = "none";
   }
 }
-
 setInterval(alertTimeOut, 1000);
+
+slideBtn1.addEventListener("click", function () {
+  slideContainer.classList.remove("slide-transform3", "slide-transform2");
+  slideContainer.classList.add("slide-transform1");
+});
+slideBtn2.addEventListener("click", function () {
+  slideContainer.classList.remove("slide-transform1", "slide-transform3");
+  slideContainer.classList.add("slide-transform2");
+});
+slideBtn3.addEventListener("click", function () {
+  slideContainer.classList.remove("slide-transform1", "slide-transform2");
+  slideContainer.classList.add("slide-transform3");
+});
+
+prevBtn.addEventListener("click", function () {
+  if (slideContainer.classList.contains("slide-transform1")) {
+    slideContainer.classList.remove("slide-transform1", "slide-transform3");
+    slideContainer.classList.add("slide-transform3");
+  } else if (slideContainer.classList.contains("slide-transform2")) {
+    slideContainer.classList.remove("slide-transform1", "slide-transform2");
+    slideContainer.classList.add("slide-transform1");
+  } else if (slideContainer.classList.contains("slide-transform3")) {
+    slideContainer.classList.remove("slide-transform2", "slide-transform3");
+    slideContainer.classList.add("slide-transform2");
+  }
+});
+nextBtn.addEventListener("click", function () {
+  if (slideContainer.classList.contains("slide-transform1")) {
+    slideContainer.classList.remove("slide-transform1", "slide-transform3");
+    slideContainer.classList.add("slide-transform2");
+  } else if (slideContainer.classList.contains("slide-transform2")) {
+    slideContainer.classList.remove("slide-transform1", "slide-transform2");
+    slideContainer.classList.add("slide-transform3");
+  } else if (slideContainer.classList.contains("slide-transform3")) {
+    slideContainer.classList.remove("slide-transform2", "slide-transform3");
+    slideContainer.classList.add("slide-transform1");
+  }
+});
