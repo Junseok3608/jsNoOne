@@ -43,9 +43,15 @@ darkModeBtn.addEventListener("click", function () {
   }
 });
 
-let first;
-function refillCoffee(first) {
-  let second = (first / 3) * 2;
-  let last = (second / 3) * 2;
-  return first + second + last;
+let time = 5;
+function alertTimeOut() {
+  if (time >= 0) {
+    document.querySelector(".alert-danger").innerHTML = `${time}초 이내 구매시 특별 할인!`;
+    time = time -= 1;
+    return time;
+  } else {
+    document.querySelector(".alert-danger").style.display = "none";
+  }
 }
+
+setInterval(alertTimeOut, 1000);
