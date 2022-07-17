@@ -67,3 +67,17 @@
 .slide-transform3 {
   transform: translateX(-200vw);
 }
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  .navbar-brand {
+    font-size: 30px;
+  }
+}
+.goodjob {
+  visibility: hidden;
+  width: 100px;
+  background-color: wheat;
+  color: rebeccapurple;
+}

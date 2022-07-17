@@ -65,6 +65,7 @@ function alertTimeOut() {
 }
 setInterval(alertTimeOut, 1000);
 
+// this part is carousel
 slideBtn1.addEventListener("click", function () {
   slideContainer.classList.remove("slide-transform3", "slide-transform2");
   slideContainer.classList.add("slide-transform1");
@@ -100,5 +101,22 @@ nextBtn.addEventListener("click", function () {
   } else if (slideContainer.classList.contains("slide-transform3")) {
     slideContainer.classList.remove("slide-transform2", "slide-transform3");
     slideContainer.classList.add("slide-transform1");
+  }
+});
+
+window.addEventListener("scroll", function () {
+  this.document.querySelector(".navbar-brand").style.fontSize = "20px";
+  if (this.window.scrollY < 100) {
+    this.document.querySelector(".navbar-brand").style.fontSize = "30px";
+  }
+});
+
+const lorem = document.querySelector(".lorem");
+
+lorem.addEventListener("scroll", function () {
+  let scrolledV = lorem.scrollTop + lorem.clientHeight + 10;
+  const scrollO = lorem.scrollHeight;
+  if (scrollO < scrolledV) {
+    document.querySelector(".goodjob").style.visibility = "visible";
   }
 });
