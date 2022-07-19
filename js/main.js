@@ -24,7 +24,12 @@ loginBtn.addEventListener("click", function () {
   loginModal.classList.toggle("show-modal");
 });
 closeBtn.addEventListener("click", function () {
-  loginModal.classList.toggle("show-modal");
+  loginModal.classList.remove("show-modal");
+});
+document.querySelector(".black-bg").addEventListener("click", function (e) {
+  if (e.target == this) {
+    loginModal.classList.remove("show-modal");
+  }
 });
 
 loginSubmit.addEventListener("click", function (e) {
