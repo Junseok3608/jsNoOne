@@ -20,23 +20,33 @@
         <span>상품명 / 가격</span>
       </div>
     </div>
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select id="item-name" class="form-select mt-2 show">
+        <option>모자</option>
+        <option>셔츠</option>
+        <option>바지</option>
+      </select>
+      <select id="item-size" class="form-select mt-2"></select>
+    </form>
+
     <div class="container mt-5">
       <ul class="list">
         <li class="tab-button" data-id="0">Products</li>
         <li class="tab-button orange" data-id="1">Information</li>
         <li class="tab-button" data-id="2">Shipping</li>
       </ul>
-      <div class="tab-content">
+      <div class="tab-content show">
         <p>상품설명입니다. Product</p>
       </div>
-      <div class="tab-content show">
+      <div class="tab-content">
         <p>스펙설명입니다. Information</p>
       </div>
       <div class="tab-content">
         <p>배송정보입니다. Shipping</p>
       </div>
     </div>
-
+    <div id="test"></div>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- script -->
@@ -47,5 +57,9 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const pants = [28, 30, 32, 34];
+      const shirts = [95, 100, 105];
+    </script>
   </body>
 </html>

@@ -36,6 +36,10 @@ ul.list::after {
   padding: 10px;
 }
 
+.form-select {
+  display: none;
+}
+
 .show {
   display: block;
 }
