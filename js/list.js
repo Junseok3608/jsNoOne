@@ -1,4 +1,9 @@
-for (i = 0; i < document.querySelectorAll(".card-body h5").length; i++) {
-  document.querySelectorAll(".card-body h5")[i].innerHTML = products[i].title;
-  document.querySelectorAll(".card-body p")[i].innerHTML = `가격: ${products[i].price}`;
-}
+products.forEach((data) => {
+  const cardSectionLayout = `
+  <div class="col-sm-4">
+    <img src="https://via.placeholder.com/600" class="w-100" />
+    <h5>${data.title}</h5>
+    <p>${data.price}</p>
+  </div>`;
+  document.querySelector(".row").insertAdjacentHTML("beforeend", cardSectionLayout);
+});
