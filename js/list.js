@@ -48,3 +48,26 @@ document.querySelector("#more-btn").addEventListener("click", function () {
     document.querySelector("#more-btn").style.visibility = "hidden";
   }
 });
+
+document.querySelector("#sort-btn").addEventListener("click", function () {
+  products.sort(function (a, b) {
+    return a.price - b.price;
+  });
+  document.querySelector(".row").innerHTML = "";
+  products.forEach((data, i) => {
+    const cardSectionLayout = `
+      <div class="col-sm-4">
+        <img src="https://via.placeholder.com/600" class="w-100" />
+        <h5>${data.title}</h5>
+        <p>${data.price}</p>
+      </div>`;
+    document.querySelector(".row").insertAdjacentHTML("beforeend", cardSectionLayout);
+  });
+});
+
+let array = [7, 3, 5, 2, 40];
+let newArray = array.filter(function (a) {
+  return a < 10;
+});
+console.log(array);
+console.log(newArray);
