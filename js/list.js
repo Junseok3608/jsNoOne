@@ -1,3 +1,16 @@
+function repage() {
+  document.querySelector(".row").innerHTML = "";
+  products.forEach((data, i) => {
+    const cardSectionLayout = `
+        <div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
+          <h5>${data.title}</h5>
+          <p>${data.price}</p>
+        </div>`;
+    document.querySelector(".row").insertAdjacentHTML("beforeend", cardSectionLayout);
+  });
+}
+
 products.forEach((data, i) => {
   const cardSectionLayout = `
     <div class="col-sm-4">
@@ -49,25 +62,38 @@ document.querySelector("#more-btn").addEventListener("click", function () {
   }
 });
 
-document.querySelector("#sort-btn").addEventListener("click", function () {
-  products.sort(function (a, b) {
-    return a.price - b.price;
-  });
-  document.querySelector(".row").innerHTML = "";
-  products.forEach((data, i) => {
-    const cardSectionLayout = `
-      <div class="col-sm-4">
-        <img src="https://via.placeholder.com/600" class="w-100" />
-        <h5>${data.title}</h5>
-        <p>${data.price}</p>
-      </div>`;
-    document.querySelector(".row").insertAdjacentHTML("beforeend", cardSectionLayout);
-  });
-});
+document.querySelector("#sort-menu").addEventListener("change", function () {
+  if (this.value == `가나다순 정렬`) {
+    products.sort(function (a, b) {
+      if (a.title > b.title) return 1;
+      else if (a.title < b.title) return -1;
+      else if (a.title == b.title) return 0;
+    });
+    repage();
+  } else if (this.value == `다나가순 정렬`) {
+    products.sort(function (a, b) {
+      if (a.title > b.title) return -1;
+      else if (a.title < b.title) return 1;
+      else if (a.title == b.title) return 0;
+    });
+    repage();
+  } else if (this.value == `가격순 정렬`) {
+    products.sort(function (a, b) {
+      return a.price - b.price;
+    });
+    repage();
+  } else if (this.value == `6만원 이하 보기`) {
+    const result = products.filter((a) => a.price < 60001);
 
-let array = [7, 3, 5, 2, 40];
-let newArray = array.filter(function (a) {
-  return a < 10;
+    document.querySelector(".row").innerHTML = "";
+    result.forEach((data, i) => {
+      const cardSectionLayout = `
+        <div class="col-sm-4">
+          <img src="https://via.placeholder.com/600" class="w-100" />
+          <h5>${data.title}</h5>
+          <p>${data.price}</p>
+        </div>`;
+      document.querySelector(".row").insertAdjacentHTML("beforeend", cardSectionLayout);
+    });
+  }
 });
-console.log(array);
-console.log(newArray);
