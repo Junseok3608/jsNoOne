@@ -102,20 +102,22 @@ document.querySelector("#sort-menu").addEventListener("change", function () {
     });
   }
 });
-
-document.querySelectorAll(".buy-btn")[0].addEventListener("click", function () {
-  document.querySelectorAll(".buy-btn")[0].style.color = "red";
-});
-
-// 1. 구매버튼 누르면 누른 상품이름 로컬스토리지에 넣기
-// +array 형식으로 넣는 것으로 하기
-// array 식으로 할 경우 우선 json으로 변환하기 그다음 넣기의 과정
-// 변환할 떄는?
-// 데이터 꺼내기- json에서 변환하기-수정하기-json으로 변환하기-다시 넣기
-// 이런 식으로 해야함
-// +sibling요소 찾는 방법 알아봐야 함
-// +로컬 스토리지가 비어있을 때랑 뭔가 있을 때 저장 방식이 다를 것임.a
-// -> 아마도 내 생각에는 if문이 도입되어서 만약 데이터 있으면? 없으면? 이런 식으로 짜게 될 듯.a
-
-// 2. 카트.html 만들어서 거기는 장바구니 페이지로 만들고,
-// 로컬스토리지에 있는 상품 명들을 쭉 진열해 보도록 할 것.a
+function addingCart(i) {
+  document.querySelectorAll(".buy-btn")[i].addEventListener("click", function () {
+    let cartItem = [];
+    if (localStorage.getItem("cart") == null) {
+      cartItem.push(this.previousElementSibling.previousElementSibling.innerText);
+      const cartItemJson = JSON.stringify(cartItem);
+      localStorage.setItem("cart", cartItemJson);
+    } else {
+      const getCartItem = localStorage.getItem("cart");
+      cartItem = JSON.parse(getCartItem);
+      cartItem.push(this.previousElementSibling.previousElementSibling.innerText);
+      const cartItemJson = JSON.stringify(cartItem);
+      localStorage.setItem("cart", cartItemJson);
+    }
+  });
+}
+for (i = 0; i < document.querySelectorAll(".buy-btn").length; i++) {
+  addingCart(i);
+}
