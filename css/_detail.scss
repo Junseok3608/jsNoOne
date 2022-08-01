@@ -37,3 +37,19 @@ ul.list::after {
 .show {
   display: block;
 }
+
+.grey {
+  background: lightgrey;
+  height: 2000px;
+  margin-top: 500px;
+}
+.text {
+  float: left;
+  width: 300px;
+}
+.image {
+  float: right;
+  width: 400px;
+  position: sticky;
+  top: 50px;
+}

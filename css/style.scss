@@ -1,5 +1,6 @@
 // pages
 @use "_detail";
+@use "_scrolling";
 
 .alert-box {
   background-color: skyblue;
@@ -51,7 +52,7 @@
   .slide-container {
     width: 300vw;
     display: flex;
-    transition: all 1s ease-in-out;
+    // transition: all 1s ease-in-out;
     .slide-box {
       width: 100vw;
       img {

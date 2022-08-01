@@ -125,3 +125,36 @@ lorem.addEventListener("scroll", function () {
     document.querySelector(".goodjob").style.visibility = "visible";
   }
 });
+
+let basicXY = 0;
+let btnClick = false;
+
+document.querySelectorAll(".slide-box")[0].addEventListener("mousedown", function (e) {
+  basicXY = e.clientX;
+  btnClick = true;
+});
+document.querySelectorAll(".slide-box")[0].addEventListener("mousemove", function (e) {
+  if (btnClick == true) {
+    $(".slide-container").css("transform", `translateX(${e.clientX - basicXY}px)`);
+  }
+});
+document.querySelectorAll(".slide-box")[0].addEventListener("mouseup", function (e) {
+  btnClick = false;
+  if (e.clientX - basicXY >= -200) {
+    $(".slide-container").css("transition", "all 0.5s").css("transform", `translateX(0vw)`);
+  } else if (e.clientX - basicXY <= -200) {
+    $(".slide-container").css("transition", "all 0.5s").css("transform", `translateX(-100vw)`);
+  }
+  setTimeout(() => {
+    $(".slide-container").css("transition", "none");
+  }, 500);
+});
+
+switch (e) {
+  case 3:
+    console.log("3");
+    break;
+  case 5:
+    console.log("6");
+    break;
+}

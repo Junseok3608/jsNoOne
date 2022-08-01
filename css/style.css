@@ -44,6 +44,42 @@ ul.list::after {
   display: block;
 }
 
+.grey {
+  background: lightgrey;
+  height: 2000px;
+  margin-top: 500px;
+}
+
+.text {
+  float: left;
+  width: 300px;
+}
+
+.image {
+  float: right;
+  width: 400px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 50px;
+}
+
+.card-bg {
+  height: 3000px;
+  margin-top: 800px;
+  margin-bottom: 1600px;
+}
+.card-bg .card-box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 200px;
+}
+.card-bg .card-box img {
+  display: block;
+  margin: auto;
+  margin-top: 200px;
+  max-width: 800px;
+}
+
 .alert-box {
   background-color: skyblue;
   padding: 20px;
@@ -99,7 +135,6 @@ ul.list::after {
 .slide-section .slide-container {
   width: 300vw;
   display: flex;
-  transition: all 1s ease-in-out;
 }
 .slide-section .slide-container .slide-box {
   width: 100vw;

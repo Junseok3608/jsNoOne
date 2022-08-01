@@ -43,3 +43,7 @@ itemName.addEventListener("input", function () {
     });
   }
 });
+
+document.querySelector(".image").addEventListener("scroll", function () {
+  console.log("hiy");
+});
