@@ -150,11 +150,18 @@ document.querySelectorAll(".slide-box")[0].addEventListener("mouseup", function 
   }, 500);
 });
 
-switch (e) {
-  case 3:
-    console.log("3");
-    break;
-  case 5:
-    console.log("6");
-    break;
-}
+document.querySelector("#quiz").addEventListener("click", function (e) {
+  switch (e.target.innerHTML) {
+    case "gf":
+      console.log("girl friends");
+      break;
+    case "p":
+      console.log("parent");
+      break;
+    case "d":
+      console.log("dog");
+      break;
+    default:
+      console.log("nothing");
+  }
+});
